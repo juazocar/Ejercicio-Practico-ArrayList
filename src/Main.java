@@ -17,6 +17,10 @@ public class Main {
         inventario.remove(objeto);
     }
 
+    public boolean buscarObjeto(String objeto) {
+        return inventario.contains(objeto);
+    }
+
     public static void main(String[] args) {
         
         Main main = new Main();
@@ -31,6 +35,8 @@ public class Main {
         main.retirarObjeto("Objeto 1");
 
         main.mostrarInventario();
+
+        System.out.println("Resultado de busqueda: "+ main.buscarObjeto("Objeto 2"));
 
     }
 }
