@@ -1,29 +1,36 @@
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
-        ArrayList<String> inventario = new ArrayList<>();
+    ArrayList<String> inventario = new ArrayList<>();
 
+    public void agregarObjeto(String objeto){
+        inventario.add(objeto);
+    }
 
-        inventario.add("1- inventiario");
-        inventario.add("2- inventario");
-        inventario.add("3- inventario");
-
-        System.out.println("Lista inventario: " + inventario);
-        System.out.println("Cantidad de cursos: " + inventario.size());
-
+    public void mostrarInventario(){
         for(int i = 0; i <= inventario.size()-1; i++){
             System.out.println(i+") "+inventario.get(i));
         }
+    }
 
-        inventario.set(1, "nuevo valor");
+    public void retirarObjeto(String objeto){
+        inventario.remove(objeto);
+    }
 
-        System.out.println("Tamaño de la lista "+inventario.size());
+    public static void main(String[] args) {
+        
+        Main main = new Main();
 
-        for(int i = inventario.size()-1; i >= 0; i--){
-            System.out.println(i+") "+inventario.get(i));
-        }
+        main.agregarObjeto("Objeto 1");
+        main.agregarObjeto("Objeto 2");
+        main.agregarObjeto("Objeto 3");
+        main.agregarObjeto("Objeto 4");
 
+        main.mostrarInventario();
+
+        main.retirarObjeto("Objeto 1");
+
+        main.mostrarInventario();
 
     }
 }
